@@ -79,8 +79,8 @@ class Trivial {
     }
 
     cargarSonidos() {
-        this.cargarSonido('../multimedia/audio/respuestaCorrecta.mp3', buffer => { this.sonidoAcierto = buffer; });
-        this.cargarSonido('../multimedia/audio/respuestaIncorrecta.mp3', buffer => { this.sonidoFallo = buffer; });
+        this.cargarSonido('./multimedia/audio/respuestaCorrecta.mp3', buffer => { this.sonidoAcierto = buffer; });
+        this.cargarSonido('./multimedia/audio/respuestaIncorrecta.mp3', buffer => { this.sonidoFallo = buffer; });
     }
 
     reproducirSonido(buffer) {
