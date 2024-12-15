@@ -1,0 +1,266 @@
+/*Sergio García Santamarina UO294636 */
+
+/*Especificidad: 001*/
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #1FA9FF;
+    color: #000000;
+    margin: 1em;
+    padding: 0em;
+}
+
+/*Especificidad: 001*/
+header{
+    background-color: #005B94;
+    color: #FFF;
+    padding: 0.3em;
+}
+
+/*Especificidad: 001*/
+nav{
+    font-size: 1.5em;
+}
+
+/*Especificidad: 001*/
+h1 {
+    font-weight:bold;
+    font-size: 3.5em;
+}
+
+/*Especificidad: 001*/
+h2{
+    font-weight:500;
+    font-size: 2em;
+}
+
+main a {
+    font-size: 1.3em;
+}
+
+/*Especificidad: 011*/
+a:link {
+    color: #2E2E2E;
+}
+
+/*Especificidad: 013*/
+header nav a:link {
+    color: #FFF;
+    background-color: #005B94;
+}
+
+/*Especificidad: 011*/
+a:visited{
+    background-color: #70C8FF;
+}
+
+/*Especificidad: 013*/
+header nav a:visited{
+    color: #FFFF00;
+    background-color: #005B94;
+}
+
+/*Especificidad: 011*/
+a:active, a:hover, a:focus{
+    color: #00FF00;
+    background-color: #70C8FF;
+}
+
+/*Especificidad: 013*/
+header nav a:active, header nav a:hover, header nav a:focus{
+    color: #00FF00;
+    background-color: #005B94;
+}
+
+/*Especificidad: 001*/
+ul {
+    font-size: 0.9em;
+    font-family: 'Times New Roman', serif;
+    list-style-type : square;
+}
+
+/*Especificidad: 001*/
+ol{
+    font-size: 0.9em;
+    font-family: 'Times New Roman', serif;
+    list-style-type : upper-roman;
+}
+
+
+/*Especificidad: 001*/
+dt{
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    margin-bottom: 0.3em;
+}
+
+/*Especificidad: 001*/
+dd{
+    font-size: 0.9em;
+    font-family: Arial, sans-serif;
+    margin-bottom: 1.3em;
+}
+
+/*Especificidad: 001*/
+table{
+    border-collapse: collapse;
+    border: 0.2em inset #000000;
+}
+
+/*Especificidad: 001*/
+caption{
+    font-weight:bold;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.6em;
+}
+
+/*Especificidad: 001*/
+th{
+    border-collapse: collapse;
+    border: 0.1em inset #000000;
+    padding: 0.4em;
+    background-color: #0094F0;
+    color: #000000;
+}
+
+/*Especificidad: 001*/
+td{
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.1em inset #000000;
+}
+
+/*Especificidad: 001*/
+img, video{
+    height: 100%;
+    width: auto;
+}
+/* Especificidad: 006 (añadido el selector de atributo role) */
+section[role="carrusel"]:last-of-type {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; 
+    border-radius: 1em;
+}
+
+/* Especificidad: 006 */
+section[role="carrusel"]:last-of-type h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+}
+
+/* Especificidad: 007 */
+section[role="carrusel"]:last-of-type img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+    border: none;
+}
+
+/* Especificidad: 007 */
+section[role="carrusel"]:last-of-type button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-size: 1em;
+}
+
+/* Especificidad: 017 */
+section[role="carrusel"]:last-of-type button:active {
+    transform: scale(1.1);
+}
+
+/* Especificidad: 017 */
+section[role="carrusel"]:last-of-type button[data-action="prev"] {
+    top: 50%;
+    left: 2%;
+}
+
+/* Especificidad: 017 */
+section[role="carrusel"]:last-of-type button[data-action="next"] {
+    top: 50%;
+    right: 2%;
+}
+
+/* Centrar la sección principal */
+section[role="trivial"] {
+    display: flex;
+    flex-direction: column;              /* Activa Flexbox */
+    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;        /* Centra verticalmente */
+    padding: 2%;                /* Espacio alrededor para evitar bordes pegados */
+    box-sizing: border-box;     /* Incluye padding en el tamaño del elemento */
+}
+
+/* Estilo del fieldset */
+section[role="trivial"] fieldset {
+    background: white;
+    padding: 5%;                /* Relleno en porcentaje para adaptabilidad */
+    border-radius: 1rem;        /* Esquinas redondeadas en unidades relativas */
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra flexible */
+    width: 90%;                 /* Ocupará el 90% del ancho del contenedor */
+    max-width: 50rem;           /* Máximo ancho en rem */
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* Estilo del legend */
+section[role="trivial"] legend {
+    font-size: 1.5rem;          /* Tamaño de fuente relativo */
+    margin-bottom: 1rem;        /* Margen flexible */
+}
+
+/* Estilo de los botones */
+section[role="trivial"] button {
+    display: block;
+    margin: 1rem auto;          /* Centra los botones horizontalmente */
+    padding: 0.8rem 5%;         /* Padding proporcional */
+    width: 100%;                /* Que ocupe todo el ancho del fieldset */
+    max-width: 20rem;           /* Máximo ancho flexible */
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.5rem;      /* Esquinas redondeadas */
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+section[role="trivial"] button:hover {
+    background: #0056b3;
+}
+
+/* Estilo del párrafo */
+section[role="trivial"] p {
+    margin: 2% 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+/*Estilo para moviles*/
+@media screen and (max-width: 465px) {
+    /*Especificidad: 001*/
+    img{
+        width: 80%;/*Redefinicion para adaptar el tamaño del video a moviles*/
+    }
+    video{
+        width: 80%; /*Redefinicion para adaptar el tamaño del video a moviles*/
+    }
+}

@@ -1,0 +1,54 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Asegura alturas iguales en una fila */
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 90%;
+    margin: auto;
+}
+
+article {
+    flex: 1 1 calc(25% - 1rem); /* Espaciado uniforme en filas */
+    max-width: 20rem;
+    min-width: 15rem;
+    min-height: 15rem; /* Asegura alturas mínimas iguales */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido equitativamente */
+    align-items: center;
+    padding: 1rem;
+    border: 0.2em solid #000;
+    border-radius: 0.5rem;
+    background-color: #63FCE8;
+    text-align: center;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+
+
+/* Títulos dentro de los artículos */
+article h3 {
+    font-size: 1.5rem; /* Escalable según el tamaño base de fuente */
+    margin-bottom: 0.5rem;
+}
+
+/* Párrafos dentro de los artículos */
+article p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    article {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 465px) {
+    article {
+        flex: 1 1 100%;
+    }
+}
